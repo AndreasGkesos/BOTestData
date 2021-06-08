@@ -10,6 +10,7 @@ namespace BOTestData.Models
         public string DateOfBirth { get; set; }
         public string TaxNumber { get; set; }
         public string Status { get; set; }
+        public string Cellphone { get; set; }
     }
 
     public class CustomerData

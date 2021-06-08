@@ -30,6 +30,7 @@ namespace BOTestData.Controllers
             var data = json.Where(x => string.IsNullOrEmpty(query.FirstName) ? true : x.FirstName.ToLower().Contains(query.FirstName.ToLower()))
                                     .Where(x => string.IsNullOrEmpty(query.LastName) ? true : x.LastName.ToLower().Contains(query.LastName.ToLower()))
                                     .Where(x => string.IsNullOrEmpty(query.TaxNumber) ? true : x.TaxNumber.Contains(query.TaxNumber))
+                                    .Where(x => string.IsNullOrEmpty(query.Cellphone) ? true : x.Cellphone.Contains(query.Cellphone))
                                     .Where(x => string.IsNullOrEmpty(query.Status) ? true : x.Status.ToLower() == query.Status.ToLower())
                                     .Skip((query.PageNumber - 1) * query.PageSize)
                                     .Take(query.PageSize)
@@ -46,6 +47,17 @@ namespace BOTestData.Controllers
             };
 
             return dto;
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<Customer> Get(string id)
+        {
+            var json = await this.service.LoadJson();
+
+            var data = json.Where(x => x.Id == id).FirstOrDefault();
+
+            return data;
         }
     }
 }
