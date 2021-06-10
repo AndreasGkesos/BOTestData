@@ -18,5 +18,17 @@ namespace BOTestData.Services
             List<T> items = JsonConvert.DeserializeObject<List<T>>(json);
             return items;
         }
+
+        public async Task<T> LoadLookupJson()
+        {
+            var genericName = typeof(T).Name;
+            string path = Directory.GetCurrentDirectory();
+
+            using StreamReader r = new StreamReader($"{path}{Path.DirectorySeparatorChar}Data{Path.DirectorySeparatorChar}{genericName}.json");
+            string json = await r.ReadToEndAsync();
+
+            T items = JsonConvert.DeserializeObject<T>(json);
+            return items;
+        }
     }
 }

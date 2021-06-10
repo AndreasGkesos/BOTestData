@@ -1,0 +1,26 @@
+{
+  "status": [
+    {
+      "number": 0,
+      "value": "active"
+    },
+    {
+      "number": 1,
+      "value": "inactive"
+    }
+  ],
+  "categorylookup": [
+    {
+      "number": 0,
+      "value": "category 1"
+    },
+    {
+      "number": 1,
+      "value": "category 2"
+    },
+    {
+      "number": 2,
+      "value": "category 3"
+    }
+  ]
+}

@@ -1,13 +1,14 @@
 ﻿namespace BOTestData.Models
 {
-    public class QueryParams
+    public class CustomerQueryParams
     {
-        public string FirstName { get; set; }
+        public string CustomerId { get; set; }
         public string LastName { get; set; }
-        public string DateOfBirth { get; set; }
-        public string TaxNumber { get; set; }
-        public string Status { get; set; }
-        public string Cellphone { get; set; }
+        public string FirstName { get; set; }
+        public string MobileNumber { get; set; }
+        public string Email { get; set; }
+        public string PostalCode { get; set; }
+        public string LandlineNumber { get; set; }
         public int PageNumber { get; set; }
         public int PageSize { get; set; }
     }
